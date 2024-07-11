@@ -31,7 +31,7 @@
                     <a class="nav-link" aria-current="page" href="CrearUsuario.html">Crear Usuario</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="Login.html">Admin</a>
+                    <a class="nav-link active" aria-current="page" href="Login.html">Login</a>
                 </li>
             </ul>
         </div>
@@ -41,43 +41,29 @@
 <div class="container text-center">
     <div class="row align-items-center justify-content-center min-vh-100">
         <div class="col-12 col-sm-4 col-lg-4 mb-3">
-            <form method="post" class="form-signin body-center">
-                {% csrf_token %}
+            <form id="productForm" class="form-signin body-center">
                 <img class="mb-4" src="https://th.bing.com/th/id/OIP.S9PEQI0Z_ZTHQlNbsOMRYwHaHa?rs=1&pid=ImgDetMain" alt="Logo" width="150" height="150">
                 
-                <label for="username" class="form-label mb-3">Ingresa tu usuario de administrador de inventario</label>
-                <input type="text" id="username" name="username" class="form-control mb-3" placeholder="Nombre de Usuario" required>
+                <label for="productName" class="form-label mb-3">Nombre del producto:</label>
+                <input type="text" id="productName" class="form-control mb-3" placeholder="Nombre del Producto" required>
                 
-                <label for="password" class="form-label mb-3">Ingrese Contraseña</label>
-                <input type="password" id="password" name="password" class="form-control mb-3" placeholder="Contraseña" required>
                 
-                <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Ingresar</button>
+                <input type="number" id="productPrice" class="form-control mb-3" placeholder="Precio" required>
                 
-                <div id='error'></div>
-                <p class="login-form-module_help-text__kKntb">¿Aún no tienes cuenta? <a id="unified-login-login-form-register-link" href="CrearUsuario.html">Regístrate</a></p>
+                <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Añadir al carro</button>
             </form>
+            <div id="cart" class="mt-4">
+                <h2>Productos en el Carro</h2>
+                <ul id="cartItems" class="list-group mb-3"></ul>
+                <h3 id="totalPrice">Total: $0.00</h3>
+                <button id="emptyCart" class="btn btn-danger">Vaciar Carro</button>
+            </div>
         </div>
-        <div id="dynamicModalContainer"></div>
-        <script src="indexprueba2.js"></script>
     </div>
 </div>
+<script src="app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-            <img src="https://i.imgur.com/JlWmvev.png" alt="Logo" width="60" height="54">
-        </a>
-        <span class="mb-3 mb-md-0 text-muted">© 2024 Delicias, Inc</span>
-    </div>
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-twitter" style="font-size: 24px;"></i></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-instagram" style="font-size: 24px;"></i></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-facebook" style="font-size: 24px;"></i></a></li>
-    </ul>
-</footer>
 </body>
 </html>
-
-
